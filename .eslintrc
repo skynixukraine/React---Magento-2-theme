@@ -1,0 +1,58 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:import/warnings"],
+  "plugins": ["prettier", "import", "flowtype"],
+  "globals": {
+    "document": true,
+    "window": true,
+    "process": true,
+    "fetch": false
+  },
+  "rules": {
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": 0,
+    "react/react-in-jsx-scope": 0,
+    "class-methods-use-this": 0,
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__", "_allPostsMeta"]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "name"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "name"  ]
+      }
+    }],
+    "import/no-named-as-default": 0,
+    "react/no-unused-prop-types": 0,
+    "consistent-return": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "import/no-extraneous-dependencies": 0,
+    "prettier/prettier": "error",
+    "flowtype/define-flow-type": 1,
+    "react/destructuring-assignment": 0,
+    "react/no-array-index-key": 0,
+    "indent": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off"
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
+}
