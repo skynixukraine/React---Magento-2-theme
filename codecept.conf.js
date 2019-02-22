@@ -1,5 +1,5 @@
 exports.config = {
-    tests: "./acceptance-tests/*_test.js",
+    tests: "./__tests/acceptance-tests/*_test.js",
     output: "./output",
     mocha: {
         reporter: "mocha-junit-reporter",
@@ -9,7 +9,7 @@ exports.config = {
     },
     helpers: {
         Puppeteer: {
-            url: "http://host.docker.internal:3000",
+            url: "http://localhost:3000",
             waitForAction: 500,
             chrome: {
                 args: ["--no-sandbox"]
