@@ -13,7 +13,7 @@ class MyApp extends App {
             return { pageProps };
         }
 
-        if (!ctx.store.getState().configData.length) {
+        if (!ctx.store.getState().configData) {
             await ctx.store.dispatch(getConfigData(ctx.query.lang));
         }
     }
@@ -26,10 +26,10 @@ class MyApp extends App {
                 <Provider store={store}>
                     <Head>
                         <title>
-                            {
-                                store.getState().configData
-                                    .general_store_information_name
-                            }
+                            {store.configData
+                                ? store.configData
+                                      .general_store_information_name
+                                : ""}
                         </title>
                         <meta
                             name="viewport"
