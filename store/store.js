@@ -6,11 +6,13 @@ import {serverUrl} from "../project.config";
 import {stores} from "../project.config";
 
 export const appInitialState = {
-    configData: []
+    configData: null,
+    cmsContent: null
 };
 
 export const actionTypes = {
-    GET_CONFIG_DATA: "GET_CONFIG_DATA"
+    GET_CONFIG_DATA: "GET_CONFIG_DATA",
+    GET_CMS_CONTENT: "GET_CMS_CONTENT"
 };
 
 // REDUCERS
@@ -19,6 +21,10 @@ export const reducer = (state = appInitialState, action) => {
         case actionTypes.GET_CONFIG_DATA:
             return Object.assign({}, state, {
                 configData: action.data
+            });
+        case actionTypes.GET_CMS_CONTENT:
+            return Object.assign({}, state, {
+                cmsContent: action.data
             });
 
         default:
@@ -46,6 +52,23 @@ export const getConfigData = lang => async dispatch => {
 
 
     dispatch({type: actionTypes.GET_CONFIG_DATA, data: config});
+};
+
+export const getCmsPageData = () => async dispatch => {
+    let content = {};
+
+
+    await axios.get(`${serverUrl}/cmsPageContent?identifier=home`).then(response=>{
+        if (response.data){
+            content = response.data;
+        }
+    }).catch(err =>{
+        console.error(err);
+        return false;
+    });
+
+
+    dispatch({type: actionTypes.GET_CMS_CONTENT, data: content});
 };
 
 

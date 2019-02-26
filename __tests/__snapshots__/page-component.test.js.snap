@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Page matches snapshot renders page layout correctly 1`] = `
+<div>
+  <div
+    className="container js-hook__main-layout"
+  />
+</div>
+`;

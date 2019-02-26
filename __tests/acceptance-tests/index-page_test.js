@@ -12,6 +12,6 @@ Scenario("Test languages in url path", I => {
 
 Scenario("Test page title", I => {
     I.amOnPage("/");
-    I.seeTitleEquals('Магазин Супер Героїв');
+    I.seeInTitle('Магазин Супер Героїв');
 });
 
