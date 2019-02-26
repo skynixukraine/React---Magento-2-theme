@@ -7,7 +7,7 @@ export function PageComponent(props) {
 
     return (
         <div>
-            <div className="container">{children}</div>
+            <div className="container js-hook__main-layout">{children}</div>
         </div>
     );
 

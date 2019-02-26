@@ -1,22 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import parse from "html-react-parser";
 import { getCmsPageData, getConfigData } from "../store/store";
 import PageComponent from "../components/Page/Page";
 
-export function Home(props) {
+export function Index(props) {
     const { cmsContent } = props;
 
     return (
         <PageComponent>
             <h1>{cmsContent.title}</h1>
-            {cmsContent.content.length
+            {cmsContent.content && cmsContent.content.length
                 ? cmsContent.content.map((data, i) => (
                       <div key={`home${i}`}>
                           <img src={data.image} alt="" />
-                          <div
-                              dangerouslySetInnerHTML={{ __html: data.text }}
-                          />
+                          {/* <div */}
+                          {/* dangerouslySetInnerHTML={{ __html: data.text }} */}
+                          {/* /> */}
+                          <div>{parse(data.text)}</div>
                       </div>
                   ))
                 : null}
@@ -24,7 +26,7 @@ export function Home(props) {
     );
 }
 
-Home.getInitialProps = async ({ store }) => {
+Index.getInitialProps = async ({ store }) => {
     const { cmsContent, configData } = store.getState();
 
     if (!cmsContent) {
@@ -36,11 +38,11 @@ Home.getInitialProps = async ({ store }) => {
     }
 };
 
-export default connect(state => state)(Home);
+export default connect(state => state)(Index);
 
-Home.propTypes = {
+Index.propTypes = {
     cmsContent: PropTypes.object
 };
-Home.defaultProps = {
+Index.defaultProps = {
     cmsContent: {}
 };

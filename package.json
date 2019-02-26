@@ -10,6 +10,7 @@
     "express": "^4.16.4",
     "gsap": "^2.0.2",
     "helmet": "^3.15.0",
+    "html-react-parser": "^0.6.1",
     "jest-transform-css": "^2.0.0",
     "next": "^7.0.2",
     "next-eslint": "0.0.4",
