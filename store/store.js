@@ -75,6 +75,7 @@ export const getHomePageData = () => async dispatch => {
         }
     }).catch(err => {
         console.error(err);
+        dispatch({type: actionTypes.SET_CMS_ERROR, error: true});
         return false;
     });
 
@@ -99,6 +100,7 @@ export const getCmsContent = urlKey => async dispatch => {
         }
     }).catch(err => {
         console.error(err);
+        dispatch({type: actionTypes.SET_CMS_ERROR, error: true});
         return false;
     });
 

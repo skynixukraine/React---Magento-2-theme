@@ -1,9 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
+import ErrorPage from "next/error";
 
 export function PageComponent(props) {
-    const {children} = props;
+    const {children, cmsError} = props;
+
+    if (cmsError) {
+        return <ErrorPage statusCode={404} />;
+    }
 
     return (
         <div>

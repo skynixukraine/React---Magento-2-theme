@@ -41,7 +41,7 @@ Index.getInitialProps = async ({ store }) => {
 export default connect(state => state)(Index);
 
 Index.propTypes = {
-    cmsContent: PropTypes.object
+    cmsContent: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 Index.defaultProps = {
     cmsContent: {}

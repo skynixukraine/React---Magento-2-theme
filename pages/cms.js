@@ -1,4 +1,3 @@
-import ErrorPage from "next/error";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
@@ -9,9 +8,6 @@ export function Cms(props) {
     const data = props.cmsContent;
     const heading = data.content_heading || data.name || "";
 
-    if (props.cmsError) {
-        return <ErrorPage statusCode={404} />;
-    }
     return (
         <PageComponent>
             <div className="cms-content js-hook__cms-content">
