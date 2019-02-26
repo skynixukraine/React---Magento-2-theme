@@ -20,5 +20,10 @@ exports.config = {
         I: "./steps_file.js"
     },
     bootstrap: null,
-    name: "super-heroes"
+    name: "super-heroes",
+    stores: {
+        default: { code: "heroes_en", urlPrefix: "", isDefault: true},
+        ru: {code: "heroes_ru", urlPrefix: "ru", isDefault: false},
+        ua: {code: "heroes_ua", urlPrefix: "ua", isDefault: false}
+    }
 };

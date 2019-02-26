@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
-import { getCmsPageData, getConfigData } from "../store/store";
+import { getHomePageData, getConfigData } from "../store/store";
 import PageComponent from "../components/Page/Page";
 
 export function Index(props) {
@@ -30,7 +30,7 @@ Index.getInitialProps = async ({ store }) => {
     const { cmsContent, configData } = store.getState();
 
     if (!cmsContent) {
-        await store.dispatch(getCmsPageData());
+        await store.dispatch(getHomePageData());
     }
 
     if (!configData) {
@@ -41,7 +41,7 @@ Index.getInitialProps = async ({ store }) => {
 export default connect(state => state)(Index);
 
 Index.propTypes = {
-    cmsContent: PropTypes.object
+    cmsContent: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 Index.defaultProps = {
     cmsContent: {}
