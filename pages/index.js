@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import parse from "html-react-parser";
+import ReactHtmlParser from "react-html-parser";
 import { getCmsPageData, getConfigData } from "../store/store";
 import PageComponent from "../components/Page/Page";
 
@@ -10,15 +10,15 @@ export function Index(props) {
 
     return (
         <PageComponent>
-            <h1>{cmsContent.title}</h1>
+            {cmsContent.content_heading ? (
+                <h1>{cmsContent.content_heading}</h1>
+            ) : null}
+
             {cmsContent.content && cmsContent.content.length
                 ? cmsContent.content.map((data, i) => (
                       <div key={`home${i}`}>
                           <img src={data.image} alt="" />
-                          {/* <div */}
-                          {/* dangerouslySetInnerHTML={{ __html: data.text }} */}
-                          {/* /> */}
-                          <div>{parse(data.text)}</div>
+                          <div>{ReactHtmlParser(data.text)}</div>
                       </div>
                   ))
                 : null}
