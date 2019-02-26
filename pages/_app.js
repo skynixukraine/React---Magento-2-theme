@@ -23,7 +23,10 @@ class MyApp extends App {
         const { configData, cmsContent } = store.getState();
 
         let title = configData ? configData.general_store_information_name : "";
-        title = cmsContent ? `${cmsContent.title} | ${title}` : title;
+        title =
+            cmsContent && cmsContent.title !== undefined
+                ? `${cmsContent.title} | ${title}`
+                : title;
         const metaDescription = cmsContent ? cmsContent.meta_description : "";
         const metaKeywords = cmsContent ? cmsContent.meta_keywords : "";
 
