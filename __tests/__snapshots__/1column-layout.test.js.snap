@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Page matches snapshot renders page layout correctly 1`] = `
+<div
+  className="container js-hook__one-col-layout"
+>
+  <div
+    className="layout-column1__header js-hook__one-col-layout-header"
+  />
+  <div
+    className="layout-column1__content js-hook__one-col-layout-content"
+  />
+  <div
+    className="layout-column1__footer js-hook__one-col-layout-footer"
+  />
+</div>
+`;

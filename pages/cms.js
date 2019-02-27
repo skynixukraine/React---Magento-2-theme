@@ -9,7 +9,7 @@ export function Cms(props) {
     const heading = data.content_heading || data.name || "";
 
     return (
-        <PageComponent>
+        <PageComponent layoutType={data.page_layout}>
             <div className="cms-content js-hook__cms-content">
                 <h1>{heading}</h1>
                 {data.content

@@ -69,7 +69,13 @@ export const getHomePageData = () => async dispatch => {
     let content = {};
 
 
-    await axios.get(`${serverUrl}/cmsPageContent?identifier=home`).then(response => {
+    await axios.get(`${serverUrl}/cmsPageContent?identifier=home_ua`).then(response => {
+        console.log(response.data)
+        if(response.data.error){
+            dispatch({type: actionTypes.SET_CMS_ERROR, error: response.data.error});
+            return;
+        }
+
         if (response.data) {
             content = response.data;
         }
@@ -89,7 +95,6 @@ export const getCmsContent = urlKey => async dispatch => {
 
 
     await axios.get(`${serverUrl}/GetUrlContent?url_key=${urlKey}`).then(response => {
-        console.log(response.data)
         if(response.data.error){
             dispatch({type: actionTypes.SET_CMS_ERROR, error: response.data.error});
             return;
