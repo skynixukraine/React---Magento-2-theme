@@ -15,3 +15,11 @@ Scenario("Test page title", I => {
     I.seeInTitle('Магазин Супер Героїв');
 });
 
+Scenario("Test type of layout on home page", I => {
+    I.amOnPage("/");
+    I.seeElement(".js-hook__one-col-layout");
+    I.seeElement(".js-hook__one-col-layout-header");
+    I.seeElement(".js-hook__one-col-layout-content");
+    I.seeElement(".js-hook__one-col-layout-footer");
+});
+

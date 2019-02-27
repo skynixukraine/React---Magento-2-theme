@@ -9,7 +9,7 @@ export function Index(props) {
     const { cmsContent } = props;
 
     return (
-        <PageComponent>
+        <PageComponent layoutType={cmsContent.page_layout}>
             {cmsContent.content_heading ? (
                 <h1>{cmsContent.content_heading}</h1>
             ) : null}
