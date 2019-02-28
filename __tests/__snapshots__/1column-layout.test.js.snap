@@ -6,7 +6,9 @@ exports[`Component Page matches snapshot renders page layout correctly 1`] = `
 >
   <div
     className="layout-column1__header js-hook__one-col-layout-header"
-  />
+  >
+    <Connect(Header) />
+  </div>
   <div
     className="layout-column1__content js-hook__one-col-layout-content"
   />

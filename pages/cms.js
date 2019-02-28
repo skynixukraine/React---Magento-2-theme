@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
-import { getCmsContent } from "../store/store";
+import { actionTypes, getCmsContent } from "../store/store";
 import PageComponent from "../components/Page/Page";
 
 export function Cms(props) {
@@ -26,6 +26,10 @@ export function Cms(props) {
 
 Cms.getInitialProps = async ({ store, query }) => {
     await store.dispatch(getCmsContent(query.urlKey));
+    await store.dispatch({
+        type: actionTypes.SET_LOCALE,
+        data: query.lang
+    });
 };
 
 export default connect(state => state)(Cms);

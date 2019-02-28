@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import "./Navigation.scss";
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -13,25 +14,21 @@ export default class Navigation extends Component {
     }
 
     toggleNav() {
-        this.state(state => {
-            this.setState({ navActive: !state.navActive });
-        });
+        this.setState(state => ({navActive: !state.navActive}));
     }
 
     render(){
         const { navActive } = this.state;
 
         return (
-            <div className="navigation">
+            <div className="navigation js-hook__navigation">
                 <div
-                    className={
-                        navActive ? "navigation__icon navigation__icon--active" : "navigation__icon"
-                    }
+                    className={`js-hook__navigation-icon navigation__icon ${navActive ? "navigation__icon--active" : " "}`}
                     onClick={this.toggleNav}
                     role="presentation"
                 >+</div>
-                <div className={navActive ? "navigation__content navigation__content--open" : "navigation__content"}>
-                    <span>DATA FOR EXAMPLE</span>
+                <div className={`navigation__content ${navActive ? "navigation__content--open" : ""}`}>
+                    <span className="js-hook__navigation-content">DATA FOR EXAMPLE</span>
                 </div>
             </div>
         );

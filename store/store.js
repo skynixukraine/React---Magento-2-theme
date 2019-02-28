@@ -8,14 +8,16 @@ import {stores} from "../project.config";
 export const appInitialState = {
     configData: null,
     cmsContent: null,
-    cmsError: false
+    cmsError: false,
+    locale: "default"
 };
 
 export const actionTypes = {
     GET_CONFIG_DATA: "GET_CONFIG_DATA",
     GET_HOME_CONTENT: "GET_HOME_CONTENT",
     GET_CMS_CONTENT: "GET_CMS_CONTENT",
-    SET_CMS_ERROR: "SET_CMS_ERROR"
+    SET_CMS_ERROR: "SET_CMS_ERROR",
+    SET_LOCALE: "SET_LOCALE"
 };
 
 // REDUCERS
@@ -37,7 +39,10 @@ export const reducer = (state = appInitialState, action) => {
             return Object.assign({}, state, {
                 cmsError: action.error
             });
-
+        case actionTypes.SET_LOCALE:
+            return Object.assign({}, state, {
+                locale: action.data
+            });
         default:
             return state;
     }
@@ -70,7 +75,6 @@ export const getHomePageData = () => async dispatch => {
 
 
     await axios.get(`${serverUrl}/cmsPageContent?identifier=home_ua`).then(response => {
-        console.log(response.data)
         if(response.data.error){
             dispatch({type: actionTypes.SET_CMS_ERROR, error: response.data.error});
             return;

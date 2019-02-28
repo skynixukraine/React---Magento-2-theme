@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Header matches snapshot renders page layout correctly 1`] = `
+<div
+  className="header js-hook__header"
+>
+  <Navigation />
+  <form
+    action="/catalogsearch/result/"
+  >
+    <input
+      className="js-hook__header-search"
+      name="q"
+      placeholder="Search"
+      type="text"
+    />
+  </form>
+  <h1
+    className="js-hook__header-logo-title"
+  >
+    Superheroes
+  </h1>
+  <div>
+    <a
+      className="js-hook__header-login"
+      href="/customer/account/login"
+    >
+      Log in
+    </a>
+    <a
+      className="js-hook__header-register"
+      href="/customer/account/create"
+    >
+      Registration
+    </a>
+    <a
+      className="js-hook__header-cart"
+      href="/checkout/cart"
+    >
+      Cart Icon
+    </a>
+    <select
+      className="js-hook__header-languages"
+      defaultValue="default"
+      name="languages"
+      onChange={[Function]}
+    >
+      <option
+        key="lang0"
+        value="default"
+      >
+        en
+      </option>
+      <option
+        key="lang1"
+        value="ru"
+      >
+        ru
+      </option>
+      <option
+        key="lang2"
+        value="ua"
+      >
+        ua
+      </option>
+    </select>
+  </div>
+</div>
+`;
