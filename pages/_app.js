@@ -3,7 +3,7 @@ import App, { Container } from "next/app";
 import withRedux from "next-redux-wrapper";
 import { Provider } from "react-redux";
 import Head from "next/head";
-import { getConfigData, initializeStore } from "../store/store";
+import { actionTypes, getConfigData, initializeStore } from "../store/store";
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -16,6 +16,11 @@ class MyApp extends App {
         if (!ctx.store.getState().configData) {
             await ctx.store.dispatch(getConfigData(ctx.query.lang));
         }
+
+        await ctx.store.dispatch({
+            type: actionTypes.SET_LOCALE,
+            data: ctx.query.lang
+        });
     }
 
     render() {

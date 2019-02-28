@@ -20,6 +20,7 @@
     "react-dom": "^16.8.2",
     "react-html-parser": "^2.0.2",
     "react-redux": "^6.0.0",
+    "react-translate-maker": "^2.1.4",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.1.0"

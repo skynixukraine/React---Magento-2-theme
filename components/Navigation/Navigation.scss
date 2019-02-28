@@ -1,0 +1,12 @@
+.navigation{
+  &__icon{
+    cursor: pointer;
+  }
+
+  &__content{
+    display: none;
+    &--open{
+      display: block;
+    }
+  }
+}

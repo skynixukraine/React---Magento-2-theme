@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
-import { getHomePageData, getConfigData } from "../store/store";
+import { getHomePageData, getConfigData, actionTypes } from "../store/store";
 import PageComponent from "../components/Page/Page";
 
 export function Index(props) {
@@ -26,16 +26,19 @@ export function Index(props) {
     );
 }
 
-Index.getInitialProps = async ({ store }) => {
-    const { cmsContent, configData } = store.getState();
+Index.getInitialProps = async ({ store, query }) => {
+    const { configData } = store.getState();
 
-    if (!cmsContent) {
-        await store.dispatch(getHomePageData());
-    }
+    await store.dispatch(getHomePageData());
 
     if (!configData) {
         await store.dispatch(getConfigData());
     }
+
+    await store.dispatch({
+        type: actionTypes.SET_LOCALE,
+        data: query.lang
+    });
 };
 
 export default connect(state => state)(Index);
