@@ -1,12 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import ReactHtmlParser from "react-html-parser";
 import { getHomePageData, getConfigData, actionTypes } from "../store/store";
 import PageComponent from "../components/Page/Page";
+import TextLeftImageRightWidget from "../components/TextLeftImageRightWidget/TextLeftImageRightWidget";
 
 export function Index(props) {
     const { cmsContent } = props;
+    console.log(cmsContent);
+    // Add all necessary types of widgets to this array
+    const allWidgetTypes = { TextLeftImageRightWidget };
 
     return (
         <PageComponent layoutType={cmsContent.page_layout}>
@@ -15,12 +18,13 @@ export function Index(props) {
             ) : null}
 
             {cmsContent.content && cmsContent.content.length
-                ? cmsContent.content.map((data, i) => (
-                      <div key={`home${i}`}>
-                          <img src={data.image} alt="" />
-                          <div>{ReactHtmlParser(data.text)}</div>
-                      </div>
-                  ))
+                ? cmsContent.content.map((data, i) => {
+                      if (data.type && allWidgetTypes[data.type]) {
+                          const Widget = allWidgetTypes[data.type];
+                          return <Widget data={data} key={`widget${i}`} />;
+                      }
+                      return null;
+                  })
                 : null}
         </PageComponent>
     );

@@ -44,3 +44,10 @@ Scenario("Test header component on index page", I => {
     I.seeElement(".js-hook__header-languages");
 });
 
+
+Scenario("Test that TextLeftImageRightWidget exist on home page", I => {
+    I.amOnPage("/");
+    I.seeElement("section.js-hook__text-left-widget");
+    I.seeElement(".js-hook__text-left-widget-image");
+    I.seeElement(".js-hook__text-left-widget-description");
+});
