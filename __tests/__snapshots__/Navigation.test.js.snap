@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Navigation matches snapshot renders page layout correctly 1`] = `
+<div
+  className="navigation js-hook__navigation"
+>
+  <div
+    className="js-hook__navigation-icon navigation__icon  "
+    onClick={[Function]}
+    role="presentation"
+  >
+    +
+  </div>
+  <div
+    className="navigation__content "
+  >
+    <span
+      className="js-hook__navigation-content"
+    >
+      DATA FOR EXAMPLE
+    </span>
+  </div>
+</div>
+`;

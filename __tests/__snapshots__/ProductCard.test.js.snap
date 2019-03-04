@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ProductCard matches snapshot renders page layout correctly 1`] = `
+<LinkRoutes
+  route="index-default"
+>
+  <a
+    className="js-hook__product-card product-card "
+  >
+    <p
+      className="js-hook__product-card-name"
+    >
+      test-product
+    </p>
+    <span
+      className="js-hook__product-card-price"
+    >
+      0
+    </span>
+  </a>
+</LinkRoutes>
+`;

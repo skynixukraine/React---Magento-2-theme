@@ -2,28 +2,27 @@ import { shallow } from "enzyme";
 import React from "react";
 import Router from "next/router";
 import toJson from "enzyme-to-json";
-import { Navigation } from "../components/Navigation/Navigation";
+import HomeSection from "../components/HomeSection/HomeSection";
 
 const mockedRouter = { push: () => {} };
 Router.router = mockedRouter;
 
-describe("Component Navigation matches snapshot", () => {
+describe("Component HomeSection matches snapshot", () => {
     it("renders page layout correctly", () => {
-        const wrapper = shallow(<Navigation />);
+        const wrapper = shallow(<HomeSection />);
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 });
 
-describe("Component Navigation", () => {
+describe("Component HomeSection", () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Navigation />);
+        wrapper = shallow(<HomeSection />);
     });
 
     it("renders the dumb component", () => {
         expect(wrapper.length).toEqual(1);
-        expect(wrapper.find(".js-hook__navigation").length).toBe(1);
     });
 
 });

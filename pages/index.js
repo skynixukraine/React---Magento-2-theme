@@ -4,12 +4,16 @@ import PropTypes from "prop-types";
 import { getHomePageData, getConfigData, actionTypes } from "../store/store";
 import PageComponent from "../components/Page/Page";
 import TextLeftImageRightWidget from "../components/TextLeftImageRightWidget/TextLeftImageRightWidget";
+import { ProductsRightTextSignatureWidget } from "../components/ProductsRightTextSignatureWidget/ProductsRightTextSignatureWidget";
 
 export function Index(props) {
     const { cmsContent } = props;
-    console.log(cmsContent);
+
     // Add all necessary types of widgets to this array
-    const allWidgetTypes = { TextLeftImageRightWidget };
+    const allWidgetTypes = {
+        TextLeftImageRightWidget,
+        ProductsRightTextSignatureWidget
+    };
 
     return (
         <PageComponent layoutType={cmsContent.page_layout}>
