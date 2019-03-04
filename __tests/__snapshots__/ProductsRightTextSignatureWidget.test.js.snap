@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ProductsRightTextSignatureWidget matches snapshot renders page layout correctly 1`] = `
+<HomeSection
+  classNames="js-hook__right-text-signature right-text-signature-widget"
+  contentClass=""
+>
+  <div
+    className="right-text-signature-widget__products js-hook__right-text-signature-products"
+  >
+    <ProductCard
+      className="right-text-signature-widget__products-item"
+      key="right-text-widget-product0"
+      product={
+        Object {
+          "name": "Test",
+          "price": "0",
+        }
+      }
+    />
+  </div>
+  <div
+    className="right-text-signature-widget__content"
+  >
+    <div
+      className="js-hook__right-text-signature-text"
+    >
+      Test text
+    </div>
+    <img
+      alt=""
+      className="js-hook__right-text-signature-image"
+      src="some-image-url"
+    />
+  </div>
+</HomeSection>
+`;

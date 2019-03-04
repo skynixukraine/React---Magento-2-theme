@@ -1,0 +1,15 @@
+.right-text-signature-widget{
+  background: url("/static/img/section2-back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__products{
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+
+    &-item{
+      margin: 10px;
+    }
+  }
+}

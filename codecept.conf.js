@@ -13,7 +13,7 @@ exports.config = {
             url: "https://super-heroes.dev.local",
             waitForAction: 500,
             chrome: {
-		"ignoreHTTPSErrors": true,
+		        "ignoreHTTPSErrors": true,
                 args: ["--no-sandbox"]
             }
         }

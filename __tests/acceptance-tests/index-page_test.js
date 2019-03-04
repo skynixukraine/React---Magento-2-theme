@@ -51,3 +51,11 @@ Scenario("Test that TextLeftImageRightWidget exist on home page", I => {
     I.seeElement(".js-hook__text-left-widget-image");
     I.seeElement(".js-hook__text-left-widget-description");
 });
+
+Scenario("Test that ProductsRightTextSignatureWidget exist on home page", I => {
+    I.amOnPage("/");
+    I.seeElement("section.js-hook__right-text-signature");
+    I.seeElement(".js-hook__right-text-signature-products");
+    I.seeElement(".js-hook__right-text-signature-image");
+    I.seeElement(".js-hook__right-text-signature-text");
+});

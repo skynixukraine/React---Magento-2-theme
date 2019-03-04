@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component HomeSection matches snapshot renders page layout correctly 1`] = `
+<section
+  className="home-section "
+>
+  <div
+    className="home-section__content "
+  >
+    <Component />
+  </div>
+</section>
+`;
