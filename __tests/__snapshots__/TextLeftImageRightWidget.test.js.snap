@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Navigation matches snapshot renders page layout correctly 1`] = `
+<section
+  className="text-left-widget js-hook__text-left-widget"
+>
+  <div
+    className="text-left-widget__content"
+  >
+    <img
+      alt=""
+      className="js-hook__text-left-widget-image text-left-widget__image"
+      src="some-test-url"
+    />
+    <div
+      className="js-hook__text-left-widget-description text-left-widget__description"
+    >
+      Test text
+    </div>
+  </div>
+</section>
+`;

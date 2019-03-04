@@ -2,14 +2,19 @@ import { shallow } from "enzyme";
 import React from "react";
 import Router from "next/router";
 import toJson from "enzyme-to-json";
-import { Navigation } from "../components/TextLeftImageRightWidget/TextLeftImageRightWidget";
+import { TextLeftImageRightWidget } from "../components/TextLeftImageRightWidget/TextLeftImageRightWidget";
 
 const mockedRouter = { push: () => {} };
 Router.router = mockedRouter;
 
+const data = {
+    image: "some-test-url",
+    text: "Test text"
+}
+
 describe("Component Navigation matches snapshot", () => {
     it("renders page layout correctly", () => {
-        const wrapper = shallow(<TextLeftImageRightWidget />);
+        const wrapper = shallow(<TextLeftImageRightWidget data={data} />);
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 });
@@ -18,7 +23,7 @@ describe("Component TextLeftImageRightWidget", () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<TextLeftImageRightWidget />);
+        wrapper = shallow(<TextLeftImageRightWidget data={data}/>);
     });
 
     it("renders the dumb component", () => {

@@ -71,7 +71,7 @@
     ]
   },
   "scripts": {
-    "dev": "npm run lint && node server.js",
+    "dev": "npm run lint && NODE_TLS_REJECT_UNAUTHORIZED=0 node server.js ",
     "build": "npm run lint && next build",
     "start": "NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED=0 node server.js",
     "test": "jest || true",
