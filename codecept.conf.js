@@ -10,9 +10,10 @@ exports.config = {
     helpers: {
         Puppeteer: {
             //url: "http://localhost:3000",
-            url: "http://host.docker.internal:3000",
+            url: "https://super-heroes.dev.local",
             waitForAction: 500,
             chrome: {
+		"ignoreHTTPSErrors": true,
                 args: ["--no-sandbox"]
             }
         }
