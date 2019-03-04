@@ -1,7 +1,6 @@
-
-
 //Global project variables are here
-export const serverUrl = "https://staging.super-heroes.com.ua/api/V1";
+//export const serverUrl = "https://staging.super-heroes.com.ua/api/V1";
+export const serverUrl = "https://<SITE_URL>/api/V1";
 
 export const stores = {
     default: { code: "heroes_en", urlPrefix: "", isDefault: true},
