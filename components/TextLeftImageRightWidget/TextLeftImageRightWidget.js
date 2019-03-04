@@ -9,8 +9,10 @@ export function TextLeftImageRightWidget(props) {
 
     return (
         <section className="text-left-widget js-hook__text-left-widget">
-            <img className="js-hook__text-left-widget-image" src={data.image} alt=""/>
-            <div className="js-hook__text-left-widget-description">{ReactHtmlParser(data.text)}</div>
+            <div className="text-left-widget__content">
+                <img className="js-hook__text-left-widget-image text-left-widget__image" src={data.image} alt=""/>
+                <div className="js-hook__text-left-widget-description text-left-widget__description">{ReactHtmlParser(data.text)}</div>
+            </div>
         </section>
     );
 }
