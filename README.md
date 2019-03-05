@@ -1,10 +1,10 @@
 # Getting Started
-###### with Syper Heroes frontend application
+###### with Reactjs Magento 2 Theme - frontend application
 ## New installation instructions
 
 ### 1 Clone Docker Compose repo
 ```bash
-1. git clone ssh://git@bitbucket.skynix.co/smjt/m2-javascript-theme.git
+1. git clone ssh://git@bitbucket.skynix.co/....git
 ```
 
 ## Development process instructions

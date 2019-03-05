@@ -9,8 +9,7 @@ exports.config = {
     },
     helpers: {
         Puppeteer: {
-            //url: "http://localhost:3000",
-            url: "https://super-heroes.dev.local",
+            url: "http://localhost:3000",
             waitForAction: 500,
             chrome: {
 		        "ignoreHTTPSErrors": true,
